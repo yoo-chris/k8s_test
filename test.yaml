@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rapa-deploy-blue
+  name: test-deploy-blue
 spec:
   replicas: 1
   selector:
@@ -10,12 +10,12 @@ spec:
   # 아래내용은 Pod 에 대한 구성내용
   template:
     metadata:
-      name: rapa-pod-blue
+      name: test-pod-blue
       labels:
         color: blue  # 반드시 "1" 과 동일해야 함
     spec:
       containers:
-        - name: rapa-ctn-blue
+        - name: test-ctn-blue
           image: chris4929/cicdtest:blue
           ports:
             - containerPort: 80
@@ -23,7 +23,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rapa-deploy-green
+  name: test-deploy-green
 spec:
   replicas: 1
   selector:
@@ -32,12 +32,12 @@ spec:
   # 아래내용은 Pod 에 대한 구성내용
   template:
     metadata:
-      name: rapa-pod-green
+      name: test-pod-green
       labels:
         color: green  # 반드시 "1" 과 동일해야 함
     spec:
       containers:
-        - name: rapa-ctn-green
+        - name: test-ctn-green
           image: chris4929/cicdtest:green
           ports:
             - containerPort: 80
